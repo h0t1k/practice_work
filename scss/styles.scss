@@ -76,6 +76,8 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
+@import url(https://fonts.googleapis.com/css?family=Heebo:100,200,300,regular,500,600,700,800,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Merienda:300,regular,500,600,700,800,900&display=swap);
 
 .wrapper {
   max-width: 1920px;
@@ -85,13 +87,13 @@ h6 {
 .header {
   background: #fff;
   box-shadow: 0px 25px 40px 0px rgba(26, 127, 114, 0.1);
-  &__active {
+  /* &__active {
     position: absolute;
     max-width: 116px;
     height: 10px;
     top: 130px;
     left: 730px;
-  }
+  }*/
   &__navigation {
     padding: 20px 150px 3px 146px;
     align-items: center;
@@ -112,14 +114,12 @@ h6 {
 
   &__menu-item {
     color: #000;
-
     font-family: Heebo;
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     &:first-child {
-      color: #1a7f72;
       /* Header font Medium */
       font-family: Heebo;
       font-size: 32px;
@@ -127,6 +127,31 @@ h6 {
       font-weight: 500;
       line-height: normal;
     }
+  }
+
+  &__link {
+    color: #000;
+    position: relative;
+  }
+  &__link:after {
+    content: "";
+    position: absolute;
+    border-radius: 50px 50px 0px 0px;
+    background-color: #1a7f72;
+    height: 10px;
+    width: 0;
+    left: 0;
+    bottom: -38px;
+    transition: 0.4s;
+  }
+  &__link:hover {
+    color: #1a7f72;
+    opacity: 1;
+  }
+  &__link:hover::after {
+    color: #1a7f72;
+    width: 150%;
+    opacity: 1;
   }
 }
 
@@ -168,19 +193,12 @@ h6 {
   &__button {
     color: #fff;
     text-align: center;
-    /* Button_text (get start) */
-    font-family: Heebo;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 130%; /* 39px */
     width: 300px;
     height: 75px;
-    flex-shrink: 0;
     /* Button_text (get start) */
     border-radius: 50px;
     background-color: #159685;
-    box-shadow: 0px 20px 40px 0px rgba(21, 113, 101, 0.2);
+    box-shadow: 0px 20px 40px #000;
     text-align: center;
     font-family: Heebo;
     font-size: 30px;
@@ -218,7 +236,6 @@ h6 {
     width: 1920px;
     padding: 0px 150px 44px 150px;
     justify-content: center;
-
     gap: 180px;
   }
 
@@ -232,7 +249,6 @@ h6 {
     height: 540px;
     color: #fff;
     border-radius: 20px;
-
     background: #fff;
   }
 
@@ -277,6 +293,7 @@ h6 {
     font-weight: 400;
     line-height: 130%; /* 31.2px */
     background: #159685;
+    box-shadow: 5px 15px 30px #0b786c;
     border-radius: 50px;
     width: 210px;
     height: 60px;
@@ -443,9 +460,8 @@ h6 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 150px;
     padding: 28px 40px 30px 20px;
-    width: 610px;
+    width: 650px;
     height: 150px;
     border-radius: 15px;
     border: 2px solid #1e9787;
@@ -476,11 +492,29 @@ h6 {
     line-height: 130%; /* 31.2px */
   }
 
-  &__btn-play {
+  &__btn-play-top {
     background-color: #159685;
+    box-shadow: 0px 10px 30px #0b786c;
     border-radius: 50px;
     width: 80px;
     height: 80px;
+    margin-left: 160px;
+  }
+  &__btn-play-midl {
+    background-color: #159685;
+    box-shadow: 0px 10px 30px #0b786c;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    margin-left: 230px;
+  }
+  &__btn-play-bottom {
+    background-color: #159685;
+    box-shadow: 0px 10px 30px #0b786c;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    margin-left: 252px;
   }
 }
 .icon {
@@ -701,7 +735,6 @@ h6 {
 
   &__button-about {
     color: #fff;
-
     text-align: center;
     /* button_text (learn more) */
     font-family: Heebo;
@@ -710,6 +743,7 @@ h6 {
     font-weight: 400;
     line-height: 130%; /* 31.2px */
     background: #159685;
+    box-shadow: 5px 15px 30px #0b786c;
     border: 0px;
     border-radius: 50px;
     width: 210px;
@@ -718,7 +752,6 @@ h6 {
 
   &__block-second {
     margin-top: 70px;
-
     display: flex;
     flex-direction: row;
     gap: 135px;
@@ -785,5 +818,19 @@ h6 {
   &__menu-icon {
     width: 55px;
     height: 55px;
+    color: #000000;
+    outline-offset: 3px;
+    outline: 1px solid transparent;
+  }
+  &__menu-icon:hover {
+    color: #099d84;
+    color: #fff;
+    box-shadow: 10px 20px 20px;
+    border: 0;
+  }
+
+  &__menu-icon:active {
+    color: #099d84;
+    box-shadow: 10px 20px 20px;
   }
 }
